@@ -17,22 +17,26 @@ public class Triangle
         this.s3 = sideC;
     }
     //******************************************************************
+    //All three sides are the same
     public boolean isEquilateral() {
-        if (s1 == s2)  {
+        if ((s1 == s2) && (s2 == s3) )  {
             isEquilateral = true;
             System.out.println("The triangle is EQUILATERAL!");
         }
         return isEquilateral;
     }
     //******************************************************************
+    //None of the sides are equal
     public boolean isScalene() {
-        if ( (s1 != s2)  ) {
+        if ( (s1 != s2) && (s1 != s3) && (s2 != s3)) {
+
             isScalene = true;
             System.out.println("The triangle is SCALENE!");
         }
         return isScalene;
     }
     //******************************************************************
+
     public boolean isIsosceles() {
         if (
                 ( (s1 == s2) || (s1 != s3) ) ||
