@@ -5,6 +5,7 @@ public class Triangle
     private boolean isEquilateral = false;
     private boolean isScalene = false;
     private boolean isIsosceles = false;
+    private boolean isNotTriangle = true;
     //private boolean invalidTri = false;
     private double s1;
     private double s2;
@@ -15,6 +16,19 @@ public class Triangle
         this.s1 = sideA;
         this.s2 = sideB;
         this.s3 = sideC;
+    }
+    //******************************************************************
+    public boolean isNotTriangle(){
+        //*********Now determining which type of triangle*************************
+        if (
+                ((s1 + s2) < s3) ||
+                        ((s1 + s3) < s2) ||
+                        ((s2 + s3) < s1)) {
+            System.out.println("The triangle is invalid");
+        }else {
+            isNotTriangle = false;
+        }
+        return  isNotTriangle;
     }
     //******************************************************************
     //All three sides are the same

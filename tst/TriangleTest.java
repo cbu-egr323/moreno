@@ -60,5 +60,25 @@ public class TriangleTest {
         Assert.assertNotEquals(triangle6.isIsosceles(), false);
     }
 
+    @Test
+    public void isNotATriangleTest(){
+        //Test cases making sure that it follows the procedure correctly
+        Triangle triangle1 = new Triangle(1, 1, 3);
+        Triangle triangle2 = new Triangle(60,60, 121);
+        Triangle triangle3 = new Triangle(0.3, 0.3, 0.7);
+
+        //Test cases making sure that it follows the incorrect cases
+        Triangle triangle4 = new Triangle(1, 1, 1.2);
+        Triangle triangle5 = new Triangle(60,60, 70);
+        Triangle triangle6 = new Triangle(0.3, 0.3, 0.4);
+
+        Assert.assertEquals(triangle1.isNotTriangle(), true);
+        Assert.assertEquals(triangle2.isNotTriangle(), true);
+        Assert.assertEquals(triangle3.isNotTriangle(),true);
+        Assert.assertEquals(triangle4.isNotTriangle(), false);
+        Assert.assertEquals(triangle5.isNotTriangle(), false);
+        Assert.assertEquals(triangle6.isNotTriangle(),false);
+    }
+
 
 }
